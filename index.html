@@ -89,7 +89,7 @@
     .timeline-item { position: relative; margin: 0 0 26px; }
     .timeline-item:before { content: ""; position: absolute; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); left: -30px; top: 9px; }
     .timeline-item .meta { color: var(--muted); font-size: 12px; font-weight: 650; letter-spacing: .04em; }
-    .note { background: #fbf8f3; border-left: 3px solid var(--accent); padding: 14px 17px; color: #6b6257; font-size: 13px; margin-top: 22px; }
+    .pub-tag { display:inline-block; color:#315d88; background:#edf3f8; border-radius:3px; padding:3px 8px; font-size:10px; font-weight:750; letter-spacing:.07em; text-transform:uppercase; margin-bottom:12px; }\n    .pub-doi { font-size:13px; margin:10px 0 0; }\n    .note { background: #fbf8f3; border-left: 3px solid var(--accent); padding: 14px 17px; color: #6b6257; font-size: 13px; margin-top: 22px; }
     .contact { background: var(--soft); border: 1px solid var(--line); border-radius: 6px; padding: 28px; }
     footer { max-width: var(--max); margin: auto; padding: 28px; display: flex; justify-content: space-between; gap: 16px; color: #8793a1; font-size: 12px; }
     @media (max-width: 760px) {
@@ -202,14 +202,64 @@
     <section id="publications">
       <div class="section-kicker">03 / Publications</div>
       <h2>Selected Publications</h2>
-      <p class="lead">I have published research and review articles in pharmaceutical sciences, biomaterials, nanomedicine, and related fields.</p>
-      <div class="cards">
-        <article class="card"><h3>CAF-Targeted Nanomedicine</h3><p>Research on nanomedicine strategies targeting cancer-associated fibroblasts and their potential applications in cancer therapy. <em>Acta Pharmaceutica Sinica B</em>, 2025 · First author.</p></article>
-        <article class="card"><h3>Nanoregulation and Chemo-Immunotherapy</h3><p>Research on CAF-targeted nanoregulation and chemo-immunotherapy for triple-negative breast cancer. <em>Biomaterials</em>, 2025 · Co-first author.</p></article>
-        <article class="card"><h3>Nanomedicine Review</h3><p>Review article in cancer-related nanomedicine. <em>Current Cancer Letters</em>, 2024 · First author.</p></article>
-        <article class="card"><h3>Additional Pharmaceutical Research</h3><p>Further first-author and co-author publications in pharmaceutical sciences and nanomedicine, 2022–2024.</p></article>
+      <p class="lead">Peer-reviewed research and review articles in nanomedicine, pharmaceutical sciences, natural product delivery, and tumor microenvironment regulation.</p>
+      <h3 style="margin:28px 0 16px;">Review Articles</h3>
+      <div class="publication-list">
+        <article class="card" style="margin-bottom:14px;">
+          <span class="pub-tag">Review · First Author</span>
+          <h3>Nano-drug delivery strategies affecting cancer-associated fibroblasts to reduce tumor metastasis</h3>
+          <p>Linghui Zou, Peng Xian, Qing Pu, Yangjie Song, Shuting Ni, Lei Chen, Kaili Hu.</p>
+          <p><em>Acta Pharmaceutica Sinica B</em>. 2025;15(4):1841–1868.</p>
+          <p class="pub-doi">DOI: <a href="https://doi.org/10.1016/j.apsb.2025.02.040" target="_blank" rel="noopener">10.1016/j.apsb.2025.02.040</a></p>
+        </article>
+        <article class="card" style="margin-bottom:14px;">
+          <span class="pub-tag">Review · Co-first Author</span>
+          <h3>Vesicular drug delivery systems for oral absorption enhancement</h3>
+          <p>Linghui Zou, Meng Cheng, Kaili Hu, Jianfang Feng, Liangxing Tu.</p>
+          <p><em>Chinese Chemical Letters</em>. 2024;35(7):109129.</p>
+          <p class="pub-doi">DOI: <a href="https://doi.org/10.1016/j.cclet.2023.109129" target="_blank" rel="noopener">10.1016/j.cclet.2023.109129</a></p>
+        </article>
       </div>
-      <div class="note">Bibliographic titles, complete author lists, volume/pages, and DOI links should be checked against the published records before this page is treated as a formal publication list. This initial page uses descriptive summaries rather than unverified citation details.</div>
+
+      <h3 style="margin:32px 0 16px;">Research Articles</h3>
+      <div class="publication-list">
+        <article class="card" style="margin-bottom:14px;">
+          <span class="pub-tag">Research Article · Co-first Author</span>
+          <h3>Precision targeted cancer-associated fibroblast nano-regulator enhanced chemo-immunotherapy for triple-negative breast cancer</h3>
+          <p>Peng Xian, Linghui Zou, Jiaxin Zhang, Xier Pan, Yangjie Song, Yunrong Nan, Qing Pu, Huizhen Liu, Don Green, Shuting Ni, Kaili Hu.</p>
+          <p><em>Biomaterials</em>. 2026;326:123679. Published online September 2025.</p>
+          <p class="pub-doi">DOI: <a href="https://doi.org/10.1016/j.biomaterials.2025.123679" target="_blank" rel="noopener">10.1016/j.biomaterials.2025.123679</a></p>
+        </article>
+        <article class="card" style="margin-bottom:14px;">
+          <span class="pub-tag">Research Article · First Author</span>
+          <h3>β-Cyclodextrin-Grafted Chitosan Enhances Intestinal Drug Absorption and Its Preliminary Mechanism Exploration</h3>
+          <p>Linghui Zou, Zhongbin Zhang, Jinqing Chen, Xu Yang, Yuyang Li, Jing Tang, Xiaolu Du, Ling Tang, Dan Liang, Xiaoyong Zhu, Jianfang Feng, Wenya Ding.</p>
+          <p><em>AAPS PharmSciTech</em>. 2022;23(6):221.</p>
+          <p class="pub-doi">DOI: <a href="https://doi.org/10.1208/s12249-022-02380-z" target="_blank" rel="noopener">10.1208/s12249-022-02380-z</a></p>
+        </article>
+        <article class="card" style="margin-bottom:14px;">
+          <span class="pub-tag">Research Article · First Author</span>
+          <h3>Paclitaxel-Loaded TPGS<sub>2k</sub>/Gelatin-Grafted Cyclodextrin/Hyaluronic Acid-Grafted Cyclodextrin Nanoparticles for Oral Bioavailability and Targeting Enhancement</h3>
+          <p>Linghui Zou, Zhongbin Zhang, Jianfang Feng, Wenyou Ding, Yanhua Li, Dan Liang, Tanfang Xie, Fang Li, Yuyang Li, Jinqing Chen, Xu Yang, Ling Tang, Wenya Ding.</p>
+          <p><em>Journal of Pharmaceutical Sciences</em>. 2022;111(6):1776–1784.</p>
+          <p class="pub-doi">DOI: <a href="https://doi.org/10.1016/j.xphs.2022.03.013" target="_blank" rel="noopener">10.1016/j.xphs.2022.03.013</a></p>
+        </article>
+        <article class="card" style="margin-bottom:14px;">
+          <span class="pub-tag">Research Article · First Author</span>
+          <h3>Andrographolide/Phospholipid/Cyclodextrin Complex-Loaded Nanoemulsion: Preparation, Optimization, in Vitro and in Vivo Evaluation</h3>
+          <p>Linghui Zou, Wenya Ding, Qiuyan Huang, Xu Yang, Jilang Li, Tianyan Huang, Zeyu Li, Si Lin, Jianfang Feng.</p>
+          <p><em>Biological &amp; Pharmaceutical Bulletin</em>. 2022;45(8):1106–1115.</p>
+          <p class="pub-doi">DOI: <a href="https://doi.org/10.1248/bpb.b22-00154" target="_blank" rel="noopener">10.1248/bpb.b22-00154</a></p>
+        </article>
+        <article class="card" style="margin-bottom:14px;">
+          <span class="pub-tag">Research Article · Co-first Author</span>
+          <h3>Preparation, Characterization, and Staphylococcus aureus Biofilm Elimination Effect of Baicalein-Loaded β-Cyclodextrin-Grafted Chitosan Nanoparticles</h3>
+          <p>Zhongbin Zhang, Jinqing Chen, Linghui Zou, Jing Tang, Jiaxin Zheng, Meijiao Luo, Gang Wang, Dan Liang, Yuyang Li, Ben Chen, Hongjun Yan, Wenya Ding.</p>
+          <p><em>International Journal of Nanomedicine</em>. 2022;17:5287–5302.</p>
+          <p class="pub-doi">DOI: <a href="https://doi.org/10.2147/IJN.S383182" target="_blank" rel="noopener">10.2147/IJN.S383182</a></p>
+        </article>
+      </div>
+      <div class="note">This page currently lists seven publications whose author records and bibliographic details have been cross-checked against publisher or PubMed records. The HepG2 exosome–luteolin paper is not included pending resolution of the publisher's published authorship correction. Please verify author-contribution labels against the final article PDFs before public use.</div>
     </section>
 
     <section id="projects">

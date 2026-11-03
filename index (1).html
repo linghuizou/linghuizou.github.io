@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Academic homepage of Linghui Zou, researcher in nanomedicine, targeted drug delivery, natural products and cancer immunotherapy at Hunan University of Chinese Medicine.">
+  <meta name="keywords" content="Linghui Zou, Zou Linghui, nanomedicine, targeted drug delivery, cancer immunotherapy, natural products, CAFs">
+  <meta name="author" content="Linghui Zou">
+  <meta name="robots" content="index, follow">
+  <title>Linghui Zou | Academic Homepage</title>
+  <style>
+    :root {
+      --navy: #142b4a;
+      --blue: #315d88;
+      --ink: #263445;
+      --muted: #65758a;
+      --line: #e5ebf1;
+      --paper: #ffffff;
+      --soft: #f5f8fb;
+      --accent: #b78b55;
+      --max: 1120px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: var(--paper); color: var(--ink);
+      font-family: Inter, "Segoe UI", Arial, "Noto Sans", sans-serif;
+      line-height: 1.7; -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { color: var(--navy); text-decoration: underline; }
+    .topbar {
+      position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,.96);
+      border-bottom: 1px solid var(--line); backdrop-filter: blur(12px);
+    }
+    .nav {
+      max-width: var(--max); margin: auto; padding: 0 28px; min-height: 72px;
+      display: flex; align-items: center; justify-content: space-between; gap: 24px;
+    }
+    .brand { color: var(--navy); font-weight: 700; letter-spacing: .02em; font-size: 17px; white-space: nowrap; }
+    .navlinks { display: flex; gap: 25px; flex-wrap: wrap; justify-content: flex-end; }
+    .navlinks a { color: #526276; font-size: 13px; font-weight: 600; }
+    .hero {
+      background: linear-gradient(115deg, #102743 0%, #1e4167 58%, #315d80 100%);
+      color: white; overflow: hidden; position: relative;
+    }
+    .hero:after {
+      content: ""; position: absolute; width: 520px; height: 520px; border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.12); right: -130px; top: -250px;
+      box-shadow: 0 0 0 45px rgba(255,255,255,.025), 0 0 0 95px rgba(255,255,255,.02);
+    }
+    .hero-inner {
+      max-width: var(--max); margin: auto; padding: 94px 28px 100px;
+      display: grid; grid-template-columns: 1.5fr .8fr; gap: 70px; align-items: center;
+      position: relative; z-index: 1;
+    }
+    .eyebrow { color: #d7c09e; font-size: 11px; letter-spacing: .19em; text-transform: uppercase; font-weight: 700; }
+    h1 { font-size: clamp(42px, 6vw, 66px); line-height: 1.08; letter-spacing: -.04em; margin: 17px 0 14px; font-weight: 650; }
+    .role { font-size: 17px; color: #e0e9f2; margin: 0 0 5px; }
+    .affiliation { color: #bfcddd; font-size: 14px; margin: 0; }
+    .hero-copy { max-width: 690px; color: #e0e8f1; font-size: 15px; margin: 27px 0 30px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn { display: inline-block; padding: 10px 17px; border-radius: 4px; font-size: 13px; font-weight: 650; }
+    .btn-light { background: white; color: var(--navy); }
+    .btn-outline { border: 1px solid rgba(255,255,255,.45); color: white; }
+    .hero-art { width: 100%; max-width: 330px; justify-self: end; }
+    .hero-art svg { width: 100%; height: auto; display: block; }
+    main { max-width: var(--max); margin: auto; padding: 0 28px; }
+    section { padding: 76px 0; border-bottom: 1px solid var(--line); scroll-margin-top: 80px; }
+    .section-kicker { color: var(--accent); font-size: 11px; font-weight: 750; letter-spacing: .17em; text-transform: uppercase; }
+    h2 { color: var(--navy); font-size: 30px; line-height: 1.25; margin: 7px 0 25px; letter-spacing: -.025em; }
+    h3 { color: var(--navy); font-size: 17px; margin: 0 0 8px; }
+    p { margin: 0 0 15px; }
+    .lead { font-size: 16px; color: #45566a; max-width: 900px; }
+    .two-col { display: grid; grid-template-columns: 1.35fr .8fr; gap: 65px; }
+    .facts { background: var(--soft); border: 1px solid var(--line); padding: 25px 27px; border-radius: 6px; }
+    .fact { padding: 11px 0; border-bottom: 1px solid #e1e8ef; }
+    .fact:last-child { border: 0; }
+    .fact strong { display: block; color: var(--navy); font-size: 13px; }
+    .fact span { color: var(--muted); font-size: 13px; }
+    .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 17px; }
+    .card { padding: 23px 24px; border: 1px solid var(--line); border-radius: 6px; background: white; }
+    .card p { color: var(--muted); font-size: 14px; margin: 0; }
+    .number-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 28px; }
+    .number { padding: 20px; background: var(--soft); border: 1px solid var(--line); border-radius: 5px; }
+    .number b { display: block; color: var(--navy); font-size: 27px; line-height: 1.2; }
+    .number span { color: var(--muted); font-size: 12px; }
+    .timeline { border-left: 2px solid #dbe4ed; padding-left: 24px; margin-left: 5px; }
+    .timeline-item { position: relative; margin: 0 0 26px; }
+    .timeline-item:before { content: ""; position: absolute; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); left: -30px; top: 9px; }
+    .timeline-item .meta { color: var(--muted); font-size: 12px; font-weight: 650; letter-spacing: .04em; }
+    .pub-tag { display:inline-block; color:#315d88; background:#edf3f8; border-radius:3px; padding:3px 8px; font-size:10px; font-weight:750; letter-spacing:.07em; text-transform:uppercase; margin-bottom:12px; }\n    .pub-doi { font-size:13px; margin:10px 0 0; }\n    .note { background: #fbf8f3; border-left: 3px solid var(--accent); padding: 14px 17px; color: #6b6257; font-size: 13px; margin-top: 22px; }
+    .contact { background: var(--soft); border: 1px solid var(--line); border-radius: 6px; padding: 28px; }
+    footer { max-width: var(--max); margin: auto; padding: 28px; display: flex; justify-content: space-between; gap: 16px; color: #8793a1; font-size: 12px; }
+    @media (max-width: 760px) {
+      .nav { padding: 14px 20px; align-items: flex-start; flex-direction: column; gap: 9px; }
+      .navlinks { justify-content: flex-start; gap: 14px; }
+      .hero-inner { grid-template-columns: 1fr; padding: 65px 22px 72px; gap: 25px; }
+      .hero-art { max-width: 210px; justify-self: start; }
+      main { padding: 0 22px; }
+      section { padding: 56px 0; }
+      .two-col { grid-template-columns: 1fr; gap: 25px; }
+      .cards { grid-template-columns: 1fr; }
+      .number-row { grid-template-columns: 1fr; }
+      footer { padding: 24px 22px; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav">
+      <a class="brand" href="#home">LINGHUI ZOU</a>
+      <div class="navlinks">
+        <a href="#about">About</a><a href="#research">Research</a><a href="#publications">Publications</a>
+        <a href="#projects">Projects</a><a href="#teaching">Teaching</a><a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="hero" id="home">
+    <div class="hero-inner">
+      <div>
+        <div class="eyebrow">Personal Academic Website</div>
+        <h1>Linghui Zou</h1>
+        <p class="role">Assistant Professor · College of Pharmacy</p>
+        <p class="affiliation">Hunan University of Chinese Medicine, China</p>
+        <p class="hero-copy">
+          My research focuses on nanomedicine, targeted drug delivery, natural product-based
+          nanotechnology, and cancer immunotherapy. I am interested in developing delivery
+          strategies that connect material design with biological mechanisms and therapeutic outcomes.
+        </p>
+        <div class="actions">
+          <a class="btn btn-light" href="#research">Explore Research</a>
+          <a class="btn btn-outline" href="#publications">Selected Publications</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 340 300" xmlns="http://www.w3.org/2000/svg">
+          <defs><radialGradient id="g"><stop stop-color="#d6c09d" stop-opacity=".95"/><stop offset="1" stop-color="#d6c09d" stop-opacity=".08"/></radialGradient></defs>
+          <circle cx="174" cy="145" r="105" fill="url(#g)" opacity=".5"/>
+          <circle cx="174" cy="145" r="78" fill="none" stroke="#d9e5ef" stroke-opacity=".75" stroke-width="1.2"/>
+          <circle cx="174" cy="145" r="52" fill="none" stroke="#d9e5ef" stroke-opacity=".65" stroke-dasharray="3 7"/>
+          <circle cx="174" cy="145" r="20" fill="#d6c09d" fill-opacity=".9"/>
+          <g fill="#e9f0f6" stroke="#e9f0f6">
+            <circle cx="174" cy="40" r="6"/><circle cx="270" cy="111" r="5"/><circle cx="230" cy="239" r="7"/>
+            <circle cx="72" cy="174" r="5"/><circle cx="111" cy="65" r="4"/><circle cx="293" cy="192" r="3"/>
+          </g>
+          <g stroke="#e9f0f6" stroke-opacity=".55" fill="none"><path d="M174 40L174 93L230 145L270 111"/><path d="M72 174L122 145L111 65"/><path d="M230 239L218 193L293 192"/></g>
+          <g fill="#d6c09d"><circle cx="122" cy="145" r="4"/><circle cx="218" cy="193" r="4"/><circle cx="230" cy="145" r="4"/></g>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section id="about">
+      <div class="section-kicker">01 / About</div>
+      <h2>About Me</h2>
+      <div class="two-col">
+        <div>
+          <p class="lead">
+            I am an assistant professor at the College of Pharmacy, Hunan University of Chinese
+            Medicine. I received my Ph.D. in Chinese Materia Medica Pharmaceutics from Sichuan University.
+          </p>
+          <p>
+            My academic interests lie at the interface of pharmaceutical sciences, nanotechnology,
+            natural products, and tumor immunology. My work explores how nanocarrier engineering and
+            targeted regulation of the tumor microenvironment can improve the delivery and therapeutic
+            performance of bioactive compounds.
+          </p>
+          <p>
+            I value mechanism-oriented research, interdisciplinary collaboration, and the translation
+            of pharmaceutical innovations into reproducible and clinically relevant strategies.
+          </p>
+        </div>
+        <aside class="facts">
+          <div class="fact"><strong>Current Position</strong><span>Assistant Professor</span></div>
+          <div class="fact"><strong>Affiliation</strong><span>College of Pharmacy, Hunan University of Chinese Medicine</span></div>
+          <div class="fact"><strong>Education</strong><span>Ph.D. in Chinese Materia Medica Pharmaceutics, Sichuan University</span></div>
+          <div class="fact"><strong>Research Fields</strong><span>Nanomedicine · Drug Delivery · Cancer Immunotherapy</span></div>
+        </aside>
+      </div>
+      <div class="number-row">
+        <div class="number"><b>8</b><span>SCI-indexed publications</span></div>
+        <div class="number"><b>3</b><span>CAS Q1 journal papers</span></div>
+        <div class="number"><b>60+</b><span>Aggregate journal impact factor (as previously reported)</span></div>
+      </div>
+    </section>
+
+    <section id="research">
+      <div class="section-kicker">02 / Research</div>
+      <h2>Research Interests</h2>
+      <p class="lead">Our broad goal is to understand and engineer the interactions between therapeutic materials, the tumor microenvironment, and antitumor immunity.</p>
+      <div class="cards">
+        <article class="card"><h3>Nanomedicine & Targeted Delivery</h3><p>Design of nanocarriers and delivery systems to improve the stability, biodistribution, targeting, and therapeutic performance of bioactive compounds.</p></article>
+        <article class="card"><h3>Cancer-Associated Fibroblasts</h3><p>Understanding cancer-associated fibroblast (CAF) heterogeneity, plasticity, and their roles in shaping the tumor microenvironment.</p></article>
+        <article class="card"><h3>Cancer Immunotherapy</h3><p>Exploring strategies to remodel immunosuppressive tumor environments and support T-cell-mediated antitumor responses.</p></article>
+        <article class="card"><h3>Natural Product Nanotechnology</h3><p>Investigating natural product-derived bioactive systems and nanotechnology-enabled approaches for pharmaceutical applications.</p></article>
+      </div>
+    </section>
+
+    <section id="publications">
+      <div class="section-kicker">03 / Publications</div>
+      <h2>Selected Publications</h2>
+      <p class="lead">Peer-reviewed research and review articles in nanomedicine, pharmaceutical sciences, natural product delivery, and tumor microenvironment regulation.</p>
+      <h3 style="margin:28px 0 16px;">Review Articles</h3>
+      <div class="publication-list">
+        <article class="card" style="margin-bottom:14px;">
+          <span class="pub-tag">Review · First Author</span>
+          <h3>Nano-drug delivery strategies affecting cancer-associated fibroblasts to reduce tumor metastasis</h3>
+          <p>Linghui Zou, Peng Xian, Qing Pu, Yangjie Song, Shuting Ni, Lei Chen, Kaili Hu.</p>
+          <p><em>Acta Pharmaceutica Sinica B</em>. 2025;15(4):1841–1868.</p>
+          <p class="pub-doi">DOI: <a href="https://doi.org/10.1016/j.apsb.2025.02.040" target="_blank" rel="noopener">10.1016/j.apsb.2025.02.040</a></p>
+        </article>
+        <article class="card" style="margin-bottom:14px;">
+          <span class="pub-tag">Review · Co-first Author</span>
+          <h3>Vesicular drug delivery systems for oral absorption enhancement</h3>
+          <p>Linghui Zou, Meng Cheng, Kaili Hu, Jianfang Feng, Liangxing Tu.</p>
+          <p><em>Chinese Chemical Letters</em>. 2024;35(7):109129.</p>
+          <p class="pub-doi">DOI: <a href="https://doi.org/10.1016/j.cclet.2023.109129" target="_blank" rel="noopener">10.1016/j.cclet.2023.109129</a></p>
+        </article>
+      </div>
+
+      <h3 style="margin:32px 0 16px;">Research Articles</h3>
+      <div class="publication-list">
+        <article class="card" style="margin-bottom:14px;">
+          <span class="pub-tag">Research Article · Co-first Author</span>
+          <h3>Precision targeted cancer-associated fibroblast nano-regulator enhanced chemo-immunotherapy for triple-negative breast cancer</h3>
+          <p>Peng Xian, Linghui Zou, Jiaxin Zhang, Xier Pan, Yangjie Song, Yunrong Nan, Qing Pu, Huizhen Liu, Don Green, Shuting Ni, Kaili Hu.</p>
+          <p><em>Biomaterials</em>. 2026;326:123679. Published online September 2025.</p>
+          <p class="pub-doi">DOI: <a href="https://doi.org/10.1016/j.biomaterials.2025.123679" target="_blank" rel="noopener">10.1016/j.biomaterials.2025.123679</a></p>
+        </article>
+        <article class="card" style="margin-bottom:14px;">
+          <span class="pub-tag">Research Article · First Author</span>
+          <h3>β-Cyclodextrin-Grafted Chitosan Enhances Intestinal Drug Absorption and Its Preliminary Mechanism Exploration</h3>
+          <p>Linghui Zou, Zhongbin Zhang, Jinqing Chen, Xu Yang, Yuyang Li, Jing Tang, Xiaolu Du, Ling Tang, Dan Liang, Xiaoyong Zhu, Jianfang Feng, Wenya Ding.</p>
+          <p><em>AAPS PharmSciTech</em>. 2022;23(6):221.</p>
+          <p class="pub-doi">DOI: <a href="https://doi.org/10.1208/s12249-022-02380-z" target="_blank" rel="noopener">10.1208/s12249-022-02380-z</a></p>
+        </article>
+        <article class="card" style="margin-bottom:14px;">
+          <span class="pub-tag">Research Article · First Author</span>
+          <h3>Paclitaxel-Loaded TPGS<sub>2k</sub>/Gelatin-Grafted Cyclodextrin/Hyaluronic Acid-Grafted Cyclodextrin Nanoparticles for Oral Bioavailability and Targeting Enhancement</h3>
+          <p>Linghui Zou, Zhongbin Zhang, Jianfang Feng, Wenyou Ding, Yanhua Li, Dan Liang, Tanfang Xie, Fang Li, Yuyang Li, Jinqing Chen, Xu Yang, Ling Tang, Wenya Ding.</p>
+          <p><em>Journal of Pharmaceutical Sciences</em>. 2022;111(6):1776–1784.</p>
+          <p class="pub-doi">DOI: <a href="https://doi.org/10.1016/j.xphs.2022.03.013" target="_blank" rel="noopener">10.1016/j.xphs.2022.03.013</a></p>
+        </article>
+        <article class="card" style="margin-bottom:14px;">
+          <span class="pub-tag">Research Article · First Author</span>
+          <h3>Andrographolide/Phospholipid/Cyclodextrin Complex-Loaded Nanoemulsion: Preparation, Optimization, in Vitro and in Vivo Evaluation</h3>
+          <p>Linghui Zou, Wenya Ding, Qiuyan Huang, Xu Yang, Jilang Li, Tianyan Huang, Zeyu Li, Si Lin, Jianfang Feng.</p>
+          <p><em>Biological &amp; Pharmaceutical Bulletin</em>. 2022;45(8):1106–1115.</p>
+          <p class="pub-doi">DOI: <a href="https://doi.org/10.1248/bpb.b22-00154" target="_blank" rel="noopener">10.1248/bpb.b22-00154</a></p>
+        </article>
+        <article class="card" style="margin-bottom:14px;">
+          <span class="pub-tag">Research Article · Co-first Author</span>
+          <h3>Preparation, Characterization, and Staphylococcus aureus Biofilm Elimination Effect of Baicalein-Loaded β-Cyclodextrin-Grafted Chitosan Nanoparticles</h3>
+          <p>Zhongbin Zhang, Jinqing Chen, Linghui Zou, Jing Tang, Jiaxin Zheng, Meijiao Luo, Gang Wang, Dan Liang, Yuyang Li, Ben Chen, Hongjun Yan, Wenya Ding.</p>
+          <p><em>International Journal of Nanomedicine</em>. 2022;17:5287–5302.</p>
+          <p class="pub-doi">DOI: <a href="https://doi.org/10.2147/IJN.S383182" target="_blank" rel="noopener">10.2147/IJN.S383182</a></p>
+        </article>
+      </div>
+      <div class="note">This page currently lists seven publications whose author records and bibliographic details have been cross-checked against publisher or PubMed records. The HepG2 exosome–luteolin paper is not included pending resolution of the publisher's published authorship correction. Please verify author-contribution labels against the final article PDFs before public use.</div>
+    </section>
+
+    <section id="projects">
+      <div class="section-kicker">04 / Projects</div>
+      <h2>Research Projects</h2>
+      <div class="timeline">
+        <div class="timeline-item"><div class="meta">RESEARCH DIRECTION</div><h3>CAF–Tumor Microenvironment Interactions</h3><p>Mechanistic studies of CAF biology, extracellular matrix remodeling, and tumor immune regulation.</p></div>
+        <div class="timeline-item"><div class="meta">RESEARCH DIRECTION</div><h3>Natural Product-Based Nanomedicine</h3><p>Development of engineered delivery systems for bioactive natural products and immunotherapeutic applications.</p></div>
+      </div>
+      <div class="note">Formal grant titles, funding agencies, project roles, and award status will be added after confirmation. Applications and awarded projects should be clearly distinguished.</div>
+    </section>
+
+    <section id="teaching">
+      <div class="section-kicker">05 / Teaching</div>
+      <h2>Teaching & Academic Activities</h2>
+      <p class="lead">Teaching and academic interests include pharmacology, pharmaceutical sciences, traditional Chinese medicine, and the scientific evaluation of innovative drug delivery systems.</p>
+      <div class="cards">
+        <article class="card"><h3>Pharmacology Education</h3><p>Teaching-related interests in pharmacological mechanisms, experimental methods, and evidence-based interpretation of drug effects.</p></article>
+        <article class="card"><h3>Academic Communication</h3><p>Participation in scholarly writing, peer review, academic exchange, and interdisciplinary research communication.</p></article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-kicker">06 / Contact</div>
+      <h2>Contact</h2>
+      <div class="contact">
+        <h3>Linghui Zou</h3>
+        <p>College of Pharmacy, Hunan University of Chinese Medicine<br>China</p>
+        <p>For academic correspondence and collaboration, please use the institutional contact information provided by the university.</p>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <span>© <span id="year">2026</span> Linghui Zou. All rights reserved.</span>
+    <span>Personal Academic Website</span>
+  </footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

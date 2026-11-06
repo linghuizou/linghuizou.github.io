@@ -23,14 +23,21 @@
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
-      margin: 0; background: var(--paper); color: var(--ink);
+      margin: 0; color: var(--ink);
+      background-color: #f7faf9;
+      background-image: linear-gradient(rgba(248,250,249,.42), rgba(248,250,249,.42)), url("tcm-nanomedicine-bg.webp");
+      background-position: center center;
+      background-size: cover;
+      background-attachment: fixed;
       font-family: Inter, "Segoe UI", Arial, "Noto Sans", sans-serif;
       line-height: 1.7; -webkit-font-smoothing: antialiased;
     }
+    /* The full-page botanical nanomedicine artwork sits behind the content.
+       Translucent section surfaces let the image show through without reducing text contrast. */
     a { color: var(--blue); text-decoration: none; }
     a:hover { color: var(--navy); text-decoration: underline; }
     .topbar {
-      position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,.96);
+      position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,.88);
       border-bottom: 1px solid var(--line); backdrop-filter: blur(12px);
     }
     .nav {
@@ -41,9 +48,17 @@
     .navlinks { display: flex; gap: 25px; flex-wrap: wrap; justify-content: flex-end; }
     .navlinks a { color: #526276; font-size: 13px; font-weight: 600; }
     .hero {
-      background: linear-gradient(115deg, #102743 0%, #1e4167 58%, #315d80 100%);
+      background:
+        radial-gradient(circle at 82% 34%, rgba(183,139,85,.20), transparent 26%),
+        linear-gradient(115deg, #102b43 0%, #173f59 55%, #315d70 100%);
       color: white; overflow: hidden; position: relative;
     }
+    .hero-motif {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      opacity: .22; pointer-events: none; z-index: 0;
+    }
+    .hero-motif path, .hero-motif circle { vector-effect: non-scaling-stroke; }
+    .hero-inner { z-index: 1; }
     .hero:after {
       content: ""; position: absolute; width: 520px; height: 520px; border-radius: 50%;
       border: 1px solid rgba(255,255,255,.12); right: -130px; top: -250px;
@@ -65,13 +80,14 @@
     .btn-outline { border: 1px solid rgba(255,255,255,.45); color: white; }
     .hero-photo-wrap {
       width: 100%; max-width: 290px; justify-self: end;
-      padding: 8px; border: 1px solid rgba(255,255,255,.28);
-      border-radius: 10px; background: rgba(255,255,255,.08);
-      box-shadow: 0 22px 55px rgba(0,0,0,.22);
+      padding: 8px; border: 1px solid rgba(220,202,164,.65);
+      border-radius: 10px; background: rgba(248,246,239,.12);
+      box-shadow: 0 22px 55px rgba(0,0,0,.24);
     }
     .hero-photo {
       display: block; width: 100%; height: auto; aspect-ratio: 3 / 4;
-      object-fit: cover; object-position: center 35%; border-radius: 5px;
+      object-fit: cover; object-position: center 34%; border-radius: 5px;
+      background: #f4f5f6;
     }
     .photo-caption { color: #d7e1eb; text-align: center; font-size: 11px; letter-spacing: .08em; margin: 9px 0 1px; }
     main { max-width: var(--max); margin: auto; padding: 0 28px; }
@@ -98,9 +114,63 @@
     .timeline-item { position: relative; margin: 0 0 26px; }
     .timeline-item:before { content: ""; position: absolute; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); left: -30px; top: 9px; }
     .timeline-item .meta { color: var(--muted); font-size: 12px; font-weight: 650; letter-spacing: .04em; }
-    .pub-tag { display:inline-block; color:#315d88; background:#edf3f8; border-radius:3px; padding:3px 8px; font-size:10px; font-weight:750; letter-spacing:.07em; text-transform:uppercase; margin-bottom:12px; }\n    .pub-doi { font-size:13px; margin:10px 0 0; }\n    .note { background: #fbf8f3; border-left: 3px solid var(--accent); padding: 14px 17px; color: #6b6257; font-size: 13px; margin-top: 22px; }
+    .pub-tag { display:inline-block; color:#315d88; background:#edf3f8; border-radius:3px; padding:3px 8px; font-size:10px; font-weight:750; letter-spacing:.07em; text-transform:uppercase; margin-bottom:12px; }
+    .pub-doi { font-size:13px; margin:10px 0 0; }
+    .note { background: #fbf8f3; border-left: 3px solid var(--accent); padding: 14px 17px; color: #6b6257; font-size: 13px; margin-top: 22px; }
     .contact { background: var(--soft); border: 1px solid var(--line); border-radius: 6px; padding: 28px; }
     footer { max-width: var(--max); margin: auto; padding: 28px; display: flex; justify-content: space-between; gap: 16px; color: #8793a1; font-size: 12px; }
+    /* Layered visual rhythm: botanical warmth, modern pharmaceutical blue, and generous whitespace */
+    main { position: relative; }
+    section { position: relative; isolation: isolate; }
+    section:nth-of-type(odd) {
+      background: linear-gradient(115deg, rgba(244,248,245,.78), rgba(250,248,242,.72));
+      box-shadow: 0 0 0 100vmax rgba(244,248,245,.76);
+      clip-path: inset(0 -100vmax);
+    }
+    section:nth-of-type(even) {
+      background: linear-gradient(115deg, rgba(246,249,252,.80), rgba(255,255,255,.74));
+      box-shadow: 0 0 0 100vmax rgba(246,249,252,.77);
+      clip-path: inset(0 -100vmax);
+    }
+    section::after {
+      content: ""; position: absolute; z-index: -1; right: 1%; top: 34px;
+      width: 190px; height: 190px; opacity: .16; pointer-events: none;
+      background-repeat: no-repeat; background-size: contain;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 220' fill='none' stroke='%23849b83' stroke-width='1.4'%3E%3Cpath d='M38 194C80 150 111 102 169 27M79 150C40 143 23 117 25 83c37 2 60 27 54 67ZM112 105c-2-42 18-70 53-82 8 37-12 68-53 82ZM66 166c36-10 65-2 82 28-35 18-65 8-82-28Z'/%3E%3C/svg%3E");
+    }
+    section:nth-of-type(even)::after {
+      opacity: .12; right: 2%;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 220' fill='none' stroke='%237b9bb2' stroke-width='1.2'%3E%3Ccircle cx='110' cy='110' r='68'/%3E%3Ccircle cx='110' cy='110' r='43' stroke-dasharray='3 6'/%3E%3Cpath d='M110 22v44m0 88v44M22 110h44m88 0h44M48 48l31 31m62 62 31 31m0-124-31 31m-62 62-31 31'/%3E%3Ccircle cx='110' cy='110' r='9' fill='%237b9bb2' fill-opacity='.18'/%3E%3C/svg%3E");
+    }
+    .section-kicker { display: inline-flex; align-items: center; gap: 10px; }
+    .section-kicker::after { content: ""; display: inline-block; width: 34px; height: 1px; background: currentColor; opacity: .65; }
+    .card {
+      position: relative; overflow: hidden;
+      background: linear-gradient(145deg, rgba(255,255,255,.93), rgba(249,251,249,.88));
+      box-shadow: 0 8px 24px rgba(28,53,69,.045);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 13px 30px rgba(28,53,69,.09); }
+    .card::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, #9aaf91, #c4a779); }
+    #research .card:nth-child(2n) { background: linear-gradient(145deg, #f4f8f5, #fff); }
+    #research .card:nth-child(2n+1) { background: linear-gradient(145deg, #f7f5ed, #fff); }
+    #research .card h3 { padding-left: 2px; }
+    #publications .card { background: rgba(255,255,255,.88); }
+    .pub-tag { background: #edf3ee; color: #47634f; }
+    .facts, .number { background: rgba(255,255,255,.74); backdrop-filter: blur(4px); }
+    .timeline-item { padding: 5px 0 5px 4px; }
+    .contact { background: linear-gradient(120deg, #f2f6f2, #f7f4ec); }
+    .hero { background:
+      radial-gradient(ellipse at 12% 85%, rgba(155,177,143,.22), transparent 32%),
+      radial-gradient(circle at 82% 34%, rgba(183,139,85,.24), transparent 27%),
+      linear-gradient(115deg, #102b43 0%, #173f59 55%, #315d70 100%); }
+    .hero-photo-wrap { transform: rotate(1deg); }
+    .hero-photo { object-position: center 30%; }
+    @media (max-width: 760px) {
+      body { background-attachment: scroll; background-position: center top; }
+      section::after { width: 120px; height: 120px; top: 22px; right: 0; opacity: .10; }
+      .hero-photo-wrap { transform: none; }
+    }
     @media (max-width: 760px) {
       .nav { padding: 14px 20px; align-items: flex-start; flex-direction: column; gap: 9px; }
       .navlinks { justify-content: flex-start; gap: 14px; }
@@ -127,9 +197,28 @@
   </header>
 
   <div class="hero" id="home">
+    <svg class="hero-motif" viewBox="0 0 1440 620" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <g fill="none" stroke="#d9c49d" stroke-width="1.15">
+        <path d="M1070 590 C1085 500 1065 430 1115 350 C1150 295 1198 250 1230 175" />
+        <path d="M1090 475 C1035 440 1000 395 1008 350 C1055 356 1090 390 1090 475Z" />
+        <path d="M1101 420 C1160 410 1208 375 1220 326 C1165 320 1125 352 1101 420Z" />
+        <path d="M1148 300 C1105 260 1095 215 1118 178 C1160 205 1172 250 1148 300Z" />
+        <path d="M1180 245 C1238 238 1280 207 1292 160 C1240 154 1198 190 1180 245Z" />
+        <g stroke="#e8edf0" stroke-opacity=".85">
+          <path d="M820 155L900 110L980 158L1035 105M900 110L915 205L995 245L1065 205L1035 105M915 205L850 260L770 225" />
+          <circle cx="820" cy="155" r="8"/><circle cx="900" cy="110" r="6"/><circle cx="980" cy="158" r="11"/>
+          <circle cx="1035" cy="105" r="5"/><circle cx="915" cy="205" r="9"/><circle cx="995" cy="245" r="6"/>
+          <circle cx="1065" cy="205" r="8"/><circle cx="850" cy="260" r="5"/><circle cx="770" cy="225" r="7"/>
+        </g>
+        <circle cx="980" cy="158" r="34" stroke-dasharray="3 7"/>
+        <circle cx="980" cy="158" r="52" stroke-opacity=".45"/>
+      </g>
+    </svg>
     <div class="hero-inner">
       <div>
         <div class="eyebrow">Personal Academic Website</div>
+        <div style="color:#d9c49d;font-size:12px;letter-spacing:.08em;margin-top:9px;">本草智慧 · 纳米科技 · 肿瘤免疫</div>
+        <div style="color:#d9c49d;font-size:12px;letter-spacing:.08em;margin-top:9px;">CHINESE MATERIA MEDICA · NANOMEDICINE</div>
         <h1>Linghui Zou</h1>
         <p class="role">Assistant Professor · College of Pharmacy</p>
         <p class="affiliation">Hunan University of Chinese Medicine, China</p>
@@ -144,7 +233,7 @@
         </div>
       </div>
       <div class="hero-photo-wrap">
-        <img class="hero-photo" src="portrait.jpg" alt="Portrait of Linghui Zou">
+        <img class="hero-photo" src="portrait.jpg" alt="Professional portrait of Linghui Zou">
         <p class="photo-caption">LINGHUI ZOU</p>
       </div>
     </div>
@@ -188,7 +277,7 @@
     <section id="research">
       <div class="section-kicker">02 / Research</div>
       <h2>Research Interests</h2>
-      <p class="lead">Our broad goal is to understand and engineer the interactions between therapeutic materials, the tumor microenvironment, and antitumor immunity.</p>
+      <p class="lead">Our broad goal is to connect the bioactive potential of natural products with precision delivery technologies, and to understand how therapeutic materials reshape the tumor microenvironment and antitumor immunity.</p>
       <div class="cards">
         <article class="card"><h3>Nanomedicine & Targeted Delivery</h3><p>Design of nanocarriers and delivery systems to improve the stability, biodistribution, targeting, and therapeutic performance of bioactive compounds.</p></article>
         <article class="card"><h3>Cancer-Associated Fibroblasts</h3><p>Understanding cancer-associated fibroblast (CAF) heterogeneity, plasticity, and their roles in shaping the tumor microenvironment.</p></article>

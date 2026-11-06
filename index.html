@@ -8,6 +8,7 @@
   <meta name="author" content="Linghui Zou">
   <meta name="robots" content="index, follow">
   <title>Linghui Zou | Academic Homepage</title>
+  <meta name="theme-color" content="#173f59">
   <style>
     :root {
       --navy: #142b4a;
@@ -24,8 +25,8 @@
     html { scroll-behavior: smooth; }
     body {
       margin: 0; color: var(--ink);
-      background-color: #f7faf9;
-      background-image: linear-gradient(rgba(248,250,249,.42), rgba(248,250,249,.42)), url("tcm-nanomedicine-bg.webp");
+      background-color: #e8eff0;
+      background-image: url("tcm-nanomedicine-bg.webp");
       background-position: center center;
       background-size: cover;
       background-attachment: fixed;
@@ -50,7 +51,7 @@
     .hero {
       background:
         radial-gradient(circle at 82% 34%, rgba(183,139,85,.20), transparent 26%),
-        linear-gradient(115deg, #102b43 0%, #173f59 55%, #315d70 100%);
+        linear-gradient(115deg, rgba(16,43,67,.82) 0%, rgba(23,63,89,.76) 55%, rgba(49,93,112,.70) 100%);
       color: white; overflow: hidden; position: relative;
     }
     .hero-motif {
@@ -123,13 +124,13 @@
     main { position: relative; }
     section { position: relative; isolation: isolate; }
     section:nth-of-type(odd) {
-      background: linear-gradient(115deg, rgba(244,248,245,.78), rgba(250,248,242,.72));
-      box-shadow: 0 0 0 100vmax rgba(244,248,245,.76);
+      background: linear-gradient(115deg, rgba(244,248,245,.43), rgba(250,248,242,.38));
+      box-shadow: none;
       clip-path: inset(0 -100vmax);
     }
     section:nth-of-type(even) {
-      background: linear-gradient(115deg, rgba(246,249,252,.80), rgba(255,255,255,.74));
-      box-shadow: 0 0 0 100vmax rgba(246,249,252,.77);
+      background: linear-gradient(115deg, rgba(246,249,252,.46), rgba(255,255,255,.40));
+      box-shadow: none;
       clip-path: inset(0 -100vmax);
     }
     section::after {
@@ -157,13 +158,13 @@
     #research .card h3 { padding-left: 2px; }
     #publications .card { background: rgba(255,255,255,.88); }
     .pub-tag { background: #edf3ee; color: #47634f; }
-    .facts, .number { background: rgba(255,255,255,.74); backdrop-filter: blur(4px); }
+    .facts, .number { background: rgba(255,255,255,.68); backdrop-filter: blur(4px); }
     .timeline-item { padding: 5px 0 5px 4px; }
-    .contact { background: linear-gradient(120deg, #f2f6f2, #f7f4ec); }
+    .contact { background: linear-gradient(120deg, rgba(242,246,242,.72), rgba(247,244,236,.68)); }
     .hero { background:
       radial-gradient(ellipse at 12% 85%, rgba(155,177,143,.22), transparent 32%),
       radial-gradient(circle at 82% 34%, rgba(183,139,85,.24), transparent 27%),
-      linear-gradient(115deg, #102b43 0%, #173f59 55%, #315d70 100%); }
+      linear-gradient(115deg, rgba(16,43,67,.82) 0%, rgba(23,63,89,.76) 55%, rgba(49,93,112,.70) 100%); }
     .hero-photo-wrap { transform: rotate(1deg); }
     .hero-photo { object-position: center 30%; }
     @media (max-width: 760px) {
